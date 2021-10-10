@@ -9,7 +9,7 @@ import net.minecraft.text.TranslatableText;
 
 @Mixin(value = ServerPlayNetworkHandler.class)
 public class ServerPlayNetworkHandlerMixin {
-	@ModifyVariable(at = @At(value = "FIELD", target = "server:Lnet/minecraft/server/MinecraftServer;", ordinal = 0), method = "handleMessage(Lnet/minecraft/server/filter/TextStream$Message;)V", ordinal = 0)
+	@ModifyVariable(at = @At(value = "FIELD", target = "Lnet/minecraft/server/network/ServerPlayNetworkHandler;server:Lnet/minecraft/server/MinecraftServer;", ordinal = 0), method = "Lnet/minecraft/server/network/ServerPlayNetworkHandler;handleMessage(Lnet/minecraft/server/filter/TextStream$Message;)V", ordinal = 0)
 	private Text beforeSendFilteredMessage(Text text) {
 		if (text!=null) {
 			String s = (String) ((TranslatableText)text).getArgs()[1];
@@ -22,7 +22,7 @@ public class ServerPlayNetworkHandlerMixin {
 		return text;
 	}
 
-	@ModifyVariable(at = @At(value = "FIELD", target = "server:Lnet/minecraft/server/MinecraftServer;", ordinal = 0), method = "handleMessage(Lnet/minecraft/server/filter/TextStream$Message;)V", ordinal = 1)
+	@ModifyVariable(at = @At(value = "FIELD", target = "Lnet/minecraft/server/network/ServerPlayNetworkHandler;server:Lnet/minecraft/server/MinecraftServer;", ordinal = 0), method = "Lnet/minecraft/server/network/ServerPlayNetworkHandler;handleMessage(Lnet/minecraft/server/filter/TextStream$Message;)V", ordinal = 1)
 	private Text beforeSendUnfilteredMessage(Text text) {
 		String s = (String) ((TranslatableText)text).getArgs()[1];
 		if (s.startsWith("{")) {
