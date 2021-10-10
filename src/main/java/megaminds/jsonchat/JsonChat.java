@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 
 public class JsonChat implements ModInitializer {
 	public static Logger LOGGER = LogManager.getLogger(JsonChat.class);
@@ -13,6 +14,7 @@ public class JsonChat implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		CommandRegistrationCallback.EVENT.register(SayRawCommand::register);
 		LOGGER.info(MOD_NAME+" initialized.");
 	}
 }

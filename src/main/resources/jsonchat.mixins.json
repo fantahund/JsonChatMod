@@ -2,7 +2,7 @@
   "required": true,
   "package": "megaminds.jsonchat.mixin",
   "compatibilityLevel": "JAVA_16",
-  "mixins": ["ServerPlayNetworkHandlerMixin"],
+  "mixins": [],
   "client": [],
   "server": [],
   "injectors": {
