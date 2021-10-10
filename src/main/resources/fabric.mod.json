@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "jsonchat",
+  "version": "${version}",
+  "name": "Json Chat Mod",
+  "description": "This allows you to use json in chat",
+  "authors": [
+    "Hoid2"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/jsonchat/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "megaminds.jsonchat.JsonChat"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [
+    "jsonchat.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.7",
+    "fabric": "*"
+  }
+}
